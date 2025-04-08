@@ -1,0 +1,521 @@
+{
+	"info": {
+		"_postman_id": "2bf70650-2b72-4543-8019-0ddde48db79a",
+		"name": "Task",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27988720"
+	},
+	"item": [
+		{
+			"name": "shipments",
+			"item": [
+				{
+					"name": "createShipment",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im1vaGFtZWRAZ21haWwuY29tIiwibmFtZSI6Im1vaGFtZWQiLCJpZCI6IjY3ZWY3MjhiZmZmODVhNDc4N2UzNzA5MiIsInJvbGUiOiJzaGlwcGVyIiwiaWF0IjoxNzQzODAxODc2fQ.e3UsB6zujdyFlHwW5hLcVA7_rfesmBqyUaBXyBiNj2A",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n    \"fromLocation\": \"makkah\",\r\n    \"toLocation\": \"dammam\",\r\n    \"weight\": \"100\",\r\n    \"goodsType\": \"clothes\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/shipments",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"shipments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get All Shipments",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im1vaGFtZWRAZ21haWwuY29tIiwibmFtZSI6Im1vaGFtZWQiLCJpZCI6IjY3ZWY3MjhiZmZmODVhNDc4N2UzNzA5MiIsInJvbGUiOiJzaGlwcGVyIiwiaWF0IjoxNzQzODAxODc2fQ.e3UsB6zujdyFlHwW5hLcVA7_rfesmBqyUaBXyBiNj2A",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/shipments/",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"shipments",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update Status",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im1vaGFtZWRAZ21haWwuY29tIiwibmFtZSI6Im1vaGFtZWQiLCJpZCI6IjY3ZWY3MjhiZmZmODVhNDc4N2UzNzA5MiIsInJvbGUiOiJzaGlwcGVyIiwiaWF0IjoxNzQzODAxODc2fQ.e3UsB6zujdyFlHwW5hLcVA7_rfesmBqyUaBXyBiNj2A",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"status\": \"delivered\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/shipments/67f04f8945a1705fccd047a0/status",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"shipments",
+								"67f04f8945a1705fccd047a0",
+								"status"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "offer",
+			"item": [
+				{
+					"name": "create offer",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFsaTU1QGdtYWlsLmNvbSIsIm5hbWUiOiJhbGkiLCJpZCI6IjY3ZjA5YmMyZjFiZDhlNjQyMjBkNWEzZCIsInJvbGUiOiJjYXJyaWVyIiwiaWF0IjoxNzQzODIxNzg5fQ.gu1IjXBNXWP4uMgS0ybqWezKzCUOAtwNe8rEl-JxkX8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"shipmentId\": \"67f04f8945a1705fccd047a0\",\r\n    \"price\": \"7000\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/offers/",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"offers",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all offer",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFsaTU1QGdtYWlsLmNvbSIsIm5hbWUiOiJhbGkiLCJpZCI6IjY3ZjA5YmMyZjFiZDhlNjQyMjBkNWEzZCIsInJvbGUiOiJjYXJyaWVyIiwiaWF0IjoxNzQzODIxNzg5fQ.gu1IjXBNXWP4uMgS0ybqWezKzCUOAtwNe8rEl-JxkX8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/offers/all",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"offers",
+								"all"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "shipmentOffers",
+			"item": [
+				{
+					"name": "create shipmentOffer",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFsaTU1QGdtYWlsLmNvbSIsIm5hbWUiOiJhbGkiLCJpZCI6IjY3ZjA5YmMyZjFiZDhlNjQyMjBkNWEzZCIsInJvbGUiOiJjYXJyaWVyIiwiaWF0IjoxNzQzODUyMjc5fQ.EmYRYyJfs1H0EzokJLRkB7a9159dvt8i9DwavIM6CS4",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"price\": \"2000\",\r\n    \"estimatedDeliveryDate\": \"10/4/2025\",\r\n    \"notes\": \"7 days\",\r\n    \"shipment\":\"67f04f3b45a1705fccd0479d\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/shipmentOffers",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"shipmentOffers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get shipmentOffer",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im1vaGFtZWRAZ21haWwuY29tIiwibmFtZSI6Im1vaGFtZWQiLCJpZCI6IjY3ZWY3MjhiZmZmODVhNDc4N2UzNzA5MiIsInJvbGUiOiJzaGlwcGVyIiwiaWF0IjoxNzQzODUzMjY2fQ.UVh1Z8LUnjyCmRyJ-xRrLQVBBDQFxr75Sb9PtwCqXj0",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/shipmentOffers/shipment/67f04f8945a1705fccd047a0",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"shipmentOffers",
+								"shipment",
+								"67f04f8945a1705fccd047a0"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "accept Offer",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im1vaGFtZWRAZ21haWwuY29tIiwibmFtZSI6Im1vaGFtZWQiLCJpZCI6IjY3ZWY3MjhiZmZmODVhNDc4N2UzNzA5MiIsInJvbGUiOiJzaGlwcGVyIiwiaWF0IjoxNzQzODUzMjY2fQ.UVh1Z8LUnjyCmRyJ-xRrLQVBBDQFxr75Sb9PtwCqXj0",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/shipmentOffers/67f113f1d96ddf8b46079389/accept",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"shipmentOffers",
+								"67f113f1d96ddf8b46079389",
+								"accept"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "shipping Bill",
+			"item": [
+				{
+					"name": "create shippinBill",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im1vaGFtZWRAZ21haWwuY29tIiwibmFtZSI6Im1vaGFtZWQiLCJpZCI6IjY3ZWY3MjhiZmZmODVhNDc4N2UzNzA5MiIsInJvbGUiOiJzaGlwcGVyIiwiaWF0IjoxNzQzODUzMjY2fQ.UVh1Z8LUnjyCmRyJ-xRrLQVBBDQFxr75Sb9PtwCqXj0",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/shipmentOffers/67f113f1d96ddf8b46079389",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"shipmentOffers",
+								"67f113f1d96ddf8b46079389"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getShippingBills",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im1vaGFtZWRAZ21haWwuY29tIiwibmFtZSI6Im1vaGFtZWQiLCJpZCI6IjY3ZWY3MjhiZmZmODVhNDc4N2UzNzA5MiIsInJvbGUiOiJzaGlwcGVyIiwiaWF0IjoxNzQzODUzMjY2fQ.UVh1Z8LUnjyCmRyJ-xRrLQVBBDQFxr75Sb9PtwCqXj0",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/shipmentOffers",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"shipmentOffers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getShippingBills Details",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im1vaGFtZWRAZ21haWwuY29tIiwibmFtZSI6Im1vaGFtZWQiLCJpZCI6IjY3ZWY3MjhiZmZmODVhNDc4N2UzNzA5MiIsInJvbGUiOiJzaGlwcGVyIiwiaWF0IjoxNzQzODUzMjY2fQ.UVh1Z8LUnjyCmRyJ-xRrLQVBBDQFxr75Sb9PtwCqXj0",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/shipmentOffers/67f3b5e2882a89ad92b0a8eb",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"shipmentOffers",
+								"67f3b5e2882a89ad92b0a8eb"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "upload pdf",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im1vaGFtZWRAZ21haWwuY29tIiwibmFtZSI6Im1vaGFtZWQiLCJpZCI6IjY3ZWY3MjhiZmZmODVhNDc4N2UzNzA5MiIsInJvbGUiOiJzaGlwcGVyIiwiaWF0IjoxNzQzODUzMjY2fQ.UVh1Z8LUnjyCmRyJ-xRrLQVBBDQFxr75Sb9PtwCqXj0",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "bill",
+									"type": "file",
+									"src": "/C:/Users/forsan/Downloads/LADING    بوليصة شحن.pdf"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/api/shipmentOffers/67f3b5e2882a89ad92b0a8eb",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"shipmentOffers",
+								"67f3b5e2882a89ad92b0a8eb"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"ali\",\r\n    \"email\": \"ali@gmail.com\",\r\n    \"password\": \"6666\",\r\n    \"role\": \"carrier\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/api/users/register",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"users",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"mohamed@gmail.com\",\r\n    \"password\": \"12345\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/api/users/login",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"users",
+						"login"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
